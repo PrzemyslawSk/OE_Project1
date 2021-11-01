@@ -11,13 +11,6 @@ class GUI():
         root = Tk()
         root.title("Genetic Algorithm")
 
-        def myClick():
-            configuration = Configuration(entryBeginRange.get(), entryEndRange.get(), entryPopulation.get(),
-            entryBits.get(), entryEpchos.get(), entryBestTournament.get(), entryElite.get(), entryCross.get(),
-            entryMutation.get(), entryInversion.get(), chooseSelection.get(), chooseCross.get(), chooseMutation.get(), maximization.get())
-
-            print(configuration)
-            pass
 
         # Labels with entries
         labelBeginRange = Label(root, text="Begin of the range")
@@ -59,7 +52,7 @@ class GUI():
         maximization = BooleanVar()
         checkbuttonMaximization = Checkbutton(root, text="Maximization", variable=maximization, onvalue=True, offvalue=False)
 
-        buttonStart = Button(root, text="Start", padx=100, command=myClick)
+        buttonStart = Button(root, text="Start", padx=100, command=root.quit)
 
 
         # Positions
@@ -96,4 +89,10 @@ class GUI():
         buttonStart.grid(row=13, column=1)
 
         root.mainloop()
+
+        configuration = Configuration(entryBeginRange.get(), entryEndRange.get(), entryPopulation.get(),
+        entryBits.get(), entryEpchos.get(), entryBestTournament.get(), entryElite.get(), entryCross.get(),
+        entryMutation.get(), entryInversion.get(), chooseSelection.get(), chooseCross.get(), chooseMutation.get(), maximization.get())
+
+        return configuration
     
