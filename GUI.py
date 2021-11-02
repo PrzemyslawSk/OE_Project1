@@ -13,17 +13,17 @@ class GUI():
 
 
         # Labels with entries
-        labelBeginRange = Label(root, text="Begin of the range")
+        labelBeginRange = Label(root, text="Begin of the range*")
         entryBeginRange = Entry(root, width=50)
-        labelEndRange = Label(root, text="End of the range")
+        labelEndRange = Label(root, text="End of the range*")
         entryEndRange = Entry(root, width=50)
-        labelPopulation = Label(root, text="Population amount")
+        labelPopulation = Label(root, text="Population amount*")
         entryPopulation = Entry(root, width=50)
-        labelBits = Label(root, text="Number of bits")
+        labelBits = Label(root, text="Number of bits*")
         entryBits = Entry(root, width=50)
         labelEpchos = Label(root, text="Epochs amount")
         entryEpchos = Entry(root, width=50)
-        labelBestTournament = Label(root, text="Best and tournament chromosome amount")
+        labelBestTournament = Label(root, text="Best and tournament chromosome amount*")
         entryBestTournament = Entry(root, width=50)
         labelElite = Label(root, text="Elite Strategy amount")
         entryElite = Entry(root, width=50)
