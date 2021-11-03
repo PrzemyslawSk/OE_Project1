@@ -6,12 +6,10 @@ from Enums.MutationMethod import MutationMethod
 from Enums.SelectionMethod import SelectionMethod
 
 class GUI():
-
     def openGUI():
         root = Tk()
-        root.title("Genetic Algorithm")
-
-
+        # the name that appears on the GUI window
+        root.title("Genetic Algorithm Project nr 1 - OE 2021")
         # Labels with entries
         labelBeginRange = Label(root, text="Begin of the range*")
         entryBeginRange = Entry(root, width=50)
@@ -54,7 +52,6 @@ class GUI():
 
         buttonStart = Button(root, text="Start", padx=100, command=root.quit)
 
-
         # Positions
         labelBeginRange.grid(row=0, column=0)
         entryBeginRange.grid(row=0, column=1)
@@ -76,7 +73,6 @@ class GUI():
         entryMutation.grid(row=8, column=1)
         labelInversion.grid(row=9, column=0)
         entryInversion.grid(row=9, column=1)
-
         labelSelectionMethod.grid(row=10, column=0)
         dropSelection.grid(row=10, column=1)
         labelCrossMethod.grid(row=11, column=0)
@@ -85,9 +81,7 @@ class GUI():
         dropMutation.grid(row=12, column=1)
 
         checkbuttonMaximization.grid(row=13, column=0)
-
         buttonStart.grid(row=13, column=1)
-
         root.mainloop()
 
         configuration = Configuration(entryBeginRange.get(), entryEndRange.get(), entryPopulation.get(),

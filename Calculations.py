@@ -1,6 +1,6 @@
 from numpy.random import randint
 from Specimen import Specimen
-
+# perform calculations
 class Calculations:
     def generate_specimen_list(configuration):
         specimen_list = []

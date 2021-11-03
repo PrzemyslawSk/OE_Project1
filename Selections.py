@@ -4,7 +4,6 @@ import math
 import random
 
 class Selections:
-
     def choose_selection(Configuration, specimen_list):
         specimen_after_selection = []
         if(Configuration.selection_method == SelectionMethod.BEST.name):

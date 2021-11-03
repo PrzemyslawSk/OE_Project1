@@ -1,5 +1,5 @@
 class Configuration:
-    
+    # defining
     def __init__(self, range_a, range_b, population, bits, epochs_amount, best_and_tournament_chromo_amount, elite_strategy_amount, cross_probability, mutation_probability, inversion_probability, selection_method, cross_method, mutation_method, maximization):
         self.range_a = int(range_a)
         self.range_b = int(range_b)
@@ -15,7 +15,7 @@ class Configuration:
         self.cross_method = cross_method
         self.mutation_method = mutation_method
         self.maximization = bool(maximization)
-
+    # listing of results
     def __str__(self):
         return "Begin range: " + self.range_a + \
         " |End range: " + self.range_b + \
