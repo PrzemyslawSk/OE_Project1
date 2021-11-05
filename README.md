@@ -7,7 +7,7 @@ Instrukcja uruchomienia:
 -Opcjonalnie `pip install -r requirements.txt`
 -następnie wpisz 'python app.py'
 -wpisz wybrane parametry i wciśnij start
-![Example](https://github.com/PrzemyslawSk/OE_Project1/tree/pmc/imgs/1.gif?raw=true)
+![GIF](https://github.com/PrzemyslawSk/OE_Project1/tree/pmc/imgs/1.gif?raw=true)
 
 TO DO:
 -Przygotuj sprawozdanie do projektu. Powinno ono zawierać:
