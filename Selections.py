@@ -1,4 +1,3 @@
-from Configuration import Configuration
 from Enums.SelectionMethod import SelectionMethod
 import math
 import random
@@ -20,7 +19,7 @@ class Selections:
         newlist = sorted(specimen_list, key=lambda x: x.fitness_function, reverse=Configuration.maximization)
         print('|Sorted specimen list|')
         print('\n'.join(map(str, newlist)))
-        how_many_winners = len(specimen_list) * Configuration.best_and_tournament_chromo_amount
+        how_many_winners = Configuration.best_and_tournament_chromo_amount
 
         if (float(how_many_winners) % 1) >= 0.5:
             how_many_winners = math.ceil(how_many_winners)

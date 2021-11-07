@@ -1,5 +1,4 @@
 from tkinter import *
-from typing import Collection
 from Configuration import Configuration
 from Enums.CrossMethod import CrossMethod
 from Enums.MutationMethod import MutationMethod

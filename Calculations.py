@@ -10,15 +10,19 @@ class Calculations:
             binaryStr_x1 = Calculations.convertListToString(binary_x[0])
             binaryStr_x2 = Calculations.convertListToString(binary_x[1])
 
-            x1 = Calculations.calculate_binary_representation(configuration.range_a, configuration.range_b, configuration.bits, binaryStr_x1)
-            x2 = Calculations.calculate_binary_representation(configuration.range_a, configuration.range_b, configuration.bits, binaryStr_x2)
-
-            fitness_function = Calculations.calculate_fitness_function(x1, x2)
-
-            specimen_list.append(Specimen(binaryStr_x1, binaryStr_x2, x1, x2, fitness_function))
+            Calculations.generate_specimen(configuration, binaryStr_x1, binaryStr_x2)
+            specimen_list.append(Calculations.generate_specimen(configuration, binaryStr_x1, binaryStr_x2))
         #print('\n'.join(map(str, specimen_list)))
         return specimen_list
-        
+    
+    def generate_specimen(configuration, binaryStr_x1, binaryStr_x2):
+        x1 = Calculations.calculate_binary_representation(configuration.range_a, configuration.range_b, configuration.bits, binaryStr_x1)
+        x2 = Calculations.calculate_binary_representation(configuration.range_a, configuration.range_b, configuration.bits, binaryStr_x2)
+
+        fitness_function = Calculations.calculate_fitness_function(x1, x2)
+        return Specimen(binaryStr_x1, binaryStr_x2, x1, x2, fitness_function)
+
+
     # create binary x1 and x2
     def binary_representation(number_of_bits):
         binary_x1 = list(randint(0, 2, number_of_bits))
