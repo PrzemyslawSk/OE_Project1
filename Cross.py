@@ -16,13 +16,13 @@ class Cross:
         return specimen_after_crossover
         
     def one_point_crossover(Configuration, specimen_after_selection):
-        print('|Crossing|')
+        #print('|Crossing|')
         crossed_list = list(specimen_after_selection)
         while(len(crossed_list)<int(Configuration.population)):
             tempList = []
             point = random.randrange(1, int(Configuration.bits)-1)
             cross_prob_roll = round(random.uniform(0, 1), 2)
-            print('CROSS PROB: ' + str(cross_prob_roll))
+            #print('CROSS PROB: ' + str(cross_prob_roll))
 
             random_spec1 = (random.choice(specimen_after_selection))
             random_spec2 = (random.choice(specimen_after_selection))
@@ -34,17 +34,17 @@ class Cross:
                 # x1
                 tempList.append(random_spec1.binary_x1[:point])
                 tempList.append(random_spec2.binary_x1[point:])
-                print('x1: ' + tempList[0] + ',' + tempList[1])
+                #print('x1: ' + tempList[0] + ',' + tempList[1])
 
                 # x2
                 tempList.append(random_spec1.binary_x2[:point])
                 tempList.append(random_spec2.binary_x2[point:])
-                print('x2: ' + tempList[2] + ',' + tempList[3])
+                #print('x2: ' + tempList[2] + ',' + tempList[3])
 
                 new_specimen = Calculations.generate_specimen(Configuration, tempList[0]+tempList[1], tempList[2]+tempList[3])
                 crossed_list.append(new_specimen)
-            else:
-                print('Crossing failed')
+            #else:
+                #print('Crossing failed')
         return crossed_list
 
 

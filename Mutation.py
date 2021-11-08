@@ -12,7 +12,7 @@ class Mutation:
         return specimen_after_mutation
 
     def one_point_mutation(Configuration, specimen_after_crossover):
-        print('|One point mutation|')
+        #print('|One point mutation|')
         mutated_list = []
 
         for spec in specimen_after_crossover:
@@ -21,9 +21,9 @@ class Mutation:
             if(mutation_prob_roll<float(Configuration.mutation_probability)):
                 random_bit1 = random.randrange(0, int(Configuration.bits))
                 random_bit2 = random.randrange(0, int(Configuration.bits))
-                print('=======================================')
-                print('x1| ' + str(random_bit1) + ' BIT| ' + spec.binary_x1)
-                print('x2| ' + str(random_bit2) + ' BIT| ' + spec.binary_x2)
+                #print('=======================================')
+                #print('x1| ' + str(random_bit1) + ' BIT| ' + spec.binary_x1)
+                #print('x2| ' + str(random_bit2) + ' BIT| ' + spec.binary_x2)
                 # x1
                 if(spec.binary_x1[random_bit1] == "0"):
                     temp = list(spec.binary_x1)
@@ -42,28 +42,28 @@ class Mutation:
                     temp = list(spec.binary_x2)
                     temp[random_bit2] = "0"
                     spec.binary_x2 = "".join(temp)
-            else:
-                print('Mutation failed')
+            #else:
+                #print('Mutation failed')
             new_spec = Calculations.generate_specimen(Configuration, spec.binary_x1, spec.binary_x2)
             mutated_list.append(new_spec)
-            print('x1 after mutation: ' + str(new_spec.binary_x1))
-            print('x2 after mutation: ' + str(new_spec.binary_x2))
+            #print('x1 after mutation: ' + str(new_spec.binary_x1))
+            #print('x2 after mutation: ' + str(new_spec.binary_x2))
         return mutated_list
 
     def two_point_mutation(Configuration, specimen_after_crossover):
-        print('|Two point mutation|')
+        #print('|Two point mutation|')
         mutated_list = []
-        number_ = 0
+        #number_ = 0
         for spec in specimen_after_crossover:
-            print('NR ' + str(number_))
+            #print('NR ' + str(number_))
             mutation_prob_roll = round(random.uniform(0, 1), 1)
             for b in range(2):
                 if(mutation_prob_roll<float(Configuration.mutation_probability) or float(Configuration.mutation_probability) == 1):
                     random_bit1 = random.randrange(0, int(Configuration.bits))
                     random_bit2 = random.randrange(0, int(Configuration.bits))
-                    print('=======================================')
-                    print('x1| ' + str(random_bit1) + ' BIT| ' + spec.binary_x1)
-                    print('x2| ' + str(random_bit2) + ' BIT| ' + spec.binary_x2)
+                    #print('=======================================')
+                    #print('x1| ' + str(random_bit1) + ' BIT| ' + spec.binary_x1)
+                    #print('x2| ' + str(random_bit2) + ' BIT| ' + spec.binary_x2)
                     # x1
                     if(spec.binary_x1[random_bit1] == "0"):
                         temp = list(spec.binary_x1)
@@ -82,13 +82,13 @@ class Mutation:
                         temp = list(spec.binary_x2)
                         temp[random_bit2] = "0"
                         spec.binary_x2 = "".join(temp)
-                else:
-                    print('Mutation failed')
+                #else:
+                    #print('Mutation failed')
 
             new_spec = Calculations.generate_specimen(Configuration, spec.binary_x1, spec.binary_x2)
             mutated_list.append(new_spec)
-            print('x1 after mutation: ' + str(new_spec.binary_x1))
-            print('x2 after mutation: ' + str(new_spec.binary_x2))
-            number_ += 1
+            #print('x1 after mutation: ' + str(new_spec.binary_x1))
+            #print('x2 after mutation: ' + str(new_spec.binary_x2))
+            #number_ += 1
 
         return mutated_list
