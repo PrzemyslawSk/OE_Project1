@@ -14,24 +14,34 @@ class GUI():
         # Labels with entries
         labelBeginRange = Label(root, text="Begin of the range*")
         entryBeginRange = Entry(root, width=50)
+        entryBeginRange.insert(END ,'-10')
         labelEndRange = Label(root, text="End of the range*")
         entryEndRange = Entry(root, width=50)
+        entryEndRange.insert(END ,'10')
         labelPopulation = Label(root, text="Population amount*")
         entryPopulation = Entry(root, width=50)
+        entryPopulation.insert(END ,'20')
         labelBits = Label(root, text="Number of bits*")
         entryBits = Entry(root, width=50)
+        entryBits.insert(END ,'15')
         labelEpchos = Label(root, text="Epochs amount")
         entryEpchos = Entry(root, width=50)
+        entryEpchos.insert(END ,'3')
         labelBestTournament = Label(root, text="Best and tournament chromosome amount*")
         entryBestTournament = Entry(root, width=50)
+        entryBestTournament.insert(END ,'8')
         labelElite = Label(root, text="Elite Strategy amount")
         entryElite = Entry(root, width=50)
+        entryElite.insert(END ,'2')
         labelCross = Label(root, text="Cross probability")
         entryCross = Entry(root, width=50)
+        entryCross.insert(END ,'0.3')
         labelMutation = Label(root, text="Mutation probability")
         entryMutation = Entry(root, width=50)
+        entryMutation.insert(END ,'0.5')
         labelInversion = Label(root, text="Inversion probability")
         entryInversion = Entry(root, width=50)
+        entryInversion.insert(END ,'0.3')
 
         labelSelectionMethod = Label(root, text="Choose selection method")
         chooseSelection = StringVar(value=SelectionMethod.BEST.name)
@@ -51,7 +61,7 @@ class GUI():
         maximization = BooleanVar()
         checkbuttonMaximization = Checkbutton(root, text="Maximization", variable=maximization, onvalue=True, offvalue=False)
 
-        buttonStart = Button(root, text="Start", padx=100, command=root.quit)
+        buttonStart = Button(root, text="Start", padx=100, font = "Raleway", bg="#27B538", fg="white", activebackground="#548F5B", command=root.quit)
 
 
         # Positions
